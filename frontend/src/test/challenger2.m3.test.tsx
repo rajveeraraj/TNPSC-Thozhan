@@ -522,8 +522,8 @@ describe('Empirical Challenger 2 — Milestone 3 Verification Suite', () => {
         <BottomNav activeTab="home" onTabChange={handleTabChange} />
       );
 
-      expect(NAV_TABS).toHaveLength(4);
-      expect(NAV_TABS.map((t) => t.id)).toEqual(['home', 'practice', 'questions', 'profile']);
+      expect(NAV_TABS).toHaveLength(5);
+      expect(NAV_TABS.map((t) => t.id)).toEqual(['home', 'practice', 'pyq', 'progress', 'profile']);
 
       // Home tab active
       const homeBtn = screen.getByRole('button', { name: /முகப்பு/i });

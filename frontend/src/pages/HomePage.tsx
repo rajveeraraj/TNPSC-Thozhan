@@ -24,12 +24,14 @@ export interface HomePageProps {
   onStartQuiz: () => void;
   onSelectSyllabus?: (subjectId: string) => void;
   onShowToast?: (message: string) => void;
+  onNavigateTab?: (tab: 'home' | 'practice' | 'pyq' | 'progress' | 'profile') => void;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({
   onStartQuiz,
   onSelectSyllabus,
   onShowToast,
+  onNavigateTab,
 }) => {
   const isSubmitted = useQuizStore((s) => s.isSubmitted);
   const user = useAuthStore((s) => s.user);
@@ -98,6 +100,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
   const handleStreakClick = () => {
     onShowToast?.(`${currentStreak}-நாள் தொடர்ச்சி செயலில் உள்ளது! 🔥 அதிகபட்சம் ${bestStreak} நாட்கள்`);
+    onNavigateTab?.('progress');
   };
 
   const handleSyllabusSelect = (subjectId: string) => {

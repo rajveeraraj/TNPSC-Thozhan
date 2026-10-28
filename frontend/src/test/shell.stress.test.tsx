@@ -112,7 +112,7 @@ describe('Adversarial & Stress Tests — BottomNav Component', () => {
       fireEvent.click(btn);
       expect(handleTabChange).toHaveBeenCalledWith(tab.id);
     });
-    expect(handleTabChange).toHaveBeenCalledTimes(4);
+    expect(handleTabChange).toHaveBeenCalledTimes(5);
   });
 });
 

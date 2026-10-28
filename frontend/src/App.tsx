@@ -5,6 +5,7 @@ import Toast from '@/components/common/Toast';
 import { HomePage } from '@/pages/HomePage';
 import { QuizPage } from '@/pages/QuizPage';
 import { PracticePage } from '@/pages/PracticePage';
+import { ProgressPage } from '@/pages/ProgressPage';
 import { ProfilePage } from '@/pages/ProfilePage';
 import { SignInPage } from '@/pages/SignInPage';
 import { SignUpPage } from '@/pages/SignUpPage';
@@ -154,6 +155,7 @@ export const App: React.FC<AppProps> = ({ initialAuthenticated }) => {
                     setActiveTab('practice');
                   }}
                   onShowToast={showToast}
+                  onNavigateTab={(tab) => setActiveTab(tab)}
                 />
               )}
 
@@ -165,10 +167,19 @@ export const App: React.FC<AppProps> = ({ initialAuthenticated }) => {
                 />
               )}
 
-              {activeTab === 'questions' && (
+              {(activeTab === 'pyq' || activeTab === 'questions') && (
                 <PracticePage
                   initialTab="pyq"
                   onStartQuiz={handleStartQuiz}
+                  onShowToast={showToast}
+                />
+              )}
+
+              {activeTab === 'progress' && (
+                <ProgressPage
+                  onPracticeTopic={(_topic) => {
+                    setActiveTab('practice');
+                  }}
                   onShowToast={showToast}
                 />
               )}
@@ -178,7 +189,7 @@ export const App: React.FC<AppProps> = ({ initialAuthenticated }) => {
                   onShowToast={showToast}
                   onLogout={handleLogout}
                   onNavigateTab={(tab) => {
-                    if (tab === 'practice' || tab === 'questions' || tab === 'home') {
+                    if (tab === 'practice' || tab === 'questions' || tab === 'pyq' || tab === 'home' || tab === 'progress') {
                       setActiveTab(tab as NavTabId);
                     }
                   }}
