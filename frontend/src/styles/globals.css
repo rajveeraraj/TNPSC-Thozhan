@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    background-color: #051424;
+    color: #d4e4fa;
+    overscroll-behavior: none;
+    -webkit-tap-highlight-color: transparent;
+    font-family: 'Be Vietnam Pro', 'Noto Sans Tamil', sans-serif;
+  }
+
+  /* Safe area padding utilities for notched devices */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  /* Clean scrollbar */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  * {
+    scrollbar-width: none;
+  }
+}
+
+@layer components {
+  /* Stitch Frosted Glass Card */
+  .glass-card {
+    background-color: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 1rem;
+  }
+
+  /* Stitch Primary Saffron CTA Button */
+  .btn-saffron {
+    background: linear-gradient(to right, #d97707, #ffb77d);
+    color: #4d2600;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(217, 119, 7, 0.25);
+    transition: all 0.2s ease;
+  }
+  .btn-saffron:active {
+    transform: scale(0.98);
+  }
+
+  /* Material Symbols Font Rule */
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+}

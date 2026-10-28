@@ -1,0 +1,184 @@
+{
+  "app": {
+    "name": "ExamBuddy (TNPSC தோழன்)",
+    "subtitle": "Your Guide to Government Career Dreams",
+    "version": "ExamBuddy Version 2.4.1",
+    "tagline": "Success is Certain with Perseverance!",
+    "offline_badge": "Offline Mode",
+    "online_badge": "Connected"
+  },
+  "nav": {
+    "home": "Home",
+    "practice": "Practice",
+    "pyq": "Questions",
+    "profile": "Profile"
+  },
+  "home": {
+    "target_exam_badge": "Target Exam",
+    "target_exam_title": "TNPSC Group 4 & VAO 2024",
+    "target_exam_countdown": "Exam Date: November 2024 • Only 45 days left",
+    "completed_label": "Completed",
+    "streak_card_title": "{count} Days Streak",
+    "streak_record": "Record: Maximum {best} days",
+    "streak_active_badge": "Keep Going!",
+    "streak_done_badge": "Done Today! ✨",
+    "days": {
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat",
+      "sun": "Sun",
+      "today": "Today",
+      "tomorrow": "Tomorrow",
+      "day_after": "Day After"
+    },
+    "daily_quiz": {
+      "badge": "Today's Mock Test",
+      "title": "Day #{day} - Special Mock Test",
+      "meta": "10 Questions • 10 Minutes • General Tamil & Polity",
+      "start_btn": "Start Test",
+      "continue_btn": "Continue",
+      "completed_btn": "View Results"
+    },
+    "syllabus": {
+      "title": "Syllabus Areas",
+      "view_all": "All",
+      "topics_count": "{count} Topics",
+      "literature": "Tamil Literature",
+      "grammar": "Tamil Grammar",
+      "polity": "Indian Polity",
+      "history": "History & Culture",
+      "geography": "Geography",
+      "maths": "Mathematics",
+      "gk": "General Knowledge"
+    },
+    "mock_banner": {
+      "title": "Next Mega Mock Test",
+      "timer_label": "Time Left: {time}",
+      "register_btn": "Register"
+    }
+  },
+  "quiz": {
+    "question_counter": "Question {current} / {total}",
+    "time_remaining": "{time} remaining",
+    "time_up": "Time is up!",
+    "close_confirm_title": "Do you want to exit the test?",
+    "close_confirm_desc": "If you exit now, your answers will not be saved.",
+    "cancel": "Cancel",
+    "exit": "Exit",
+    "audio_listen": "Listen to question",
+    "options": {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D"
+    },
+    "explanation_title": "Explanation",
+    "prev_btn": "Previous",
+    "next_btn": "Next",
+    "submit_btn": "Submit",
+    "submitting": "Submitting...",
+    "results": {
+      "title": "Test Results",
+      "score_summary": "Your Score: {score} / {total}",
+      "streak_msg": "Your streak has increased to {count} days! 🔥",
+      "accuracy": "Accuracy: {accuracy}%",
+      "review_answers": "Review Answers",
+      "home_btn": "Go to Home"
+    }
+  },
+  "practice": {
+    "header_badge": "TNPSC Practice Portal",
+    "target_badge": "Target 2024",
+    "heading": "Keep Practicing!",
+    "subheading": "Topic-wise questions and previous year question papers to conquer your exam.",
+    "tabs": {
+      "topic": "Topic-wise",
+      "pyq": "Previous Year Questions"
+    },
+    "search_placeholder": "Search questions or topics...",
+    "filters": {
+      "all": "All",
+      "group4": "Group 4 (2023)",
+      "group2": "Group 2 (2022)",
+      "vao": "VAO (2021)",
+      "tamil": "General Tamil"
+    },
+    "card": {
+      "questions_count": "{count} Questions",
+      "completed": "Completed",
+      "start_btn": "Start",
+      "take_exam_btn": "Take Exam",
+      "bookmarked": "Bookmark saved!",
+      "unbookmarked": "Bookmark removed",
+      "special_tag": "Group 4 Special Focus",
+      "unit8_tag": "VAO Special (Unit 8)",
+      "maths_tag": "25 Marks Focus",
+      "solutions_tag": "With Full Solutions"
+    },
+    "quick_practice_title": "Quick Practice",
+    "toast": {
+      "starting": "Starting: {title}",
+      "quick_start": "⚡ Starting Quick Mock Test!"
+    }
+  },
+  "profile": {
+    "badge": "Group 4 VAO",
+    "aspirant_id": "Registration No: {id}",
+    "target_status": "Target: Tamil Nadu Govt Exam 2024",
+    "edit_btn": "Edit",
+    "metrics": {
+      "streak_title": "Days",
+      "streak_sub": "Streak 🔥",
+      "accuracy_sub": "Accuracy 🎯",
+      "solved_sub": "Questions Solved 📚"
+    },
+    "heatmap": {
+      "title": "14-Day Activity Heatmap",
+      "badge": "Excellent",
+      "desc": "Your daily practice status over the past two weeks:",
+      "days": {
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday",
+        "saturday": "Saturday",
+        "sunday": "Sunday"
+      }
+    },
+    "settings": {
+      "title": "Settings & Preferences",
+      "bookmarks": {
+        "title": "Bookmarks & Notes",
+        "desc": "Questions and notes saved by you"
+      },
+      "weak_topics": {
+        "title": "Weak Topic Analysis",
+        "desc": "Areas requiring more focus"
+      },
+      "notifications": {
+        "title": "Notifications & Reminders",
+        "desc": "Daily test reminders"
+      },
+      "appearance": {
+        "title": "Language & Theme",
+        "desc": "Tamil / Dark Mode active"
+      },
+      "logout": {
+        "title": "Logout",
+        "desc": "Sign out from account",
+        "confirm": "Are you sure you want to log out?"
+      }
+    }
+  },
+  "errors": {
+    "network_error": "No internet connection. Operating in offline mode.",
+    "server_error": "Server error. Please try again later.",
+    "unauthorized": "Your session has expired. Please sign in again.",
+    "validation_error": "Please enter valid details.",
+    "not_found": "The requested page or question was not found."
+  }
+}

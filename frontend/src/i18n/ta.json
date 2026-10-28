@@ -1,0 +1,184 @@
+{
+  "app": {
+    "name": "TNPSC தோழன்",
+    "subtitle": "உங்கள் அரசுப் பணி கனவின் வழிகாட்டி",
+    "version": "TNPSC தோழன் பதிப்பு 2.4.1",
+    "tagline": "வெற்றி நிச்சயம், விடாமுயற்சி!",
+    "offline_badge": "ஆஃப்லைன் முறை",
+    "online_badge": "இணைக்கப்பட்டுள்ளது"
+  },
+  "nav": {
+    "home": "முகப்பு",
+    "practice": "பயிற்சி",
+    "pyq": "வினாக்கள்",
+    "profile": "சுயவிவரம்"
+  },
+  "home": {
+    "target_exam_badge": "இலக்கு தேர்வு (Target Exam)",
+    "target_exam_title": "TNPSC Group 4 & VAO 2024",
+    "target_exam_countdown": "தேர்வு நாள்: நவம்பர் 2024 • 45 நாட்கள் மட்டுமே உள்ளது",
+    "completed_label": "முடிந்தது",
+    "streak_card_title": "{count} நாள் தொடர்ச்சி ({count} Days Streak)",
+    "streak_record": "சாதனை: அதிகபட்சம் {best} நாட்கள்",
+    "streak_active_badge": "தொடர்க!",
+    "streak_done_badge": "இன்று முடிந்தது! ✨",
+    "days": {
+      "mon": "தி",
+      "tue": "செ",
+      "wed": "பு",
+      "thu": "வி",
+      "fri": "வெ",
+      "sat": "ச",
+      "sun": "ஞா",
+      "today": "இன்று",
+      "tomorrow": "நாளை",
+      "day_after": "மறு"
+    },
+    "daily_quiz": {
+      "badge": "இன்றைய மாதிரித் தேர்வு",
+      "title": "நாள் #{day} - சிறப்பு மாதிரித் தேர்வு",
+      "meta": "10 கேள்விகள் • 10 நிமிடங்கள் • பொது தமிழ் & அரசியல்",
+      "start_btn": "தேர்வைத் தொடங்குக",
+      "continue_btn": "தொடர்க",
+      "completed_btn": "முடிவுகளைக் காண்க"
+    },
+    "syllabus": {
+      "title": "பாடப் பிரிவுகள் (Syllabus)",
+      "view_all": "அனைத்தும் (All)",
+      "topics_count": "{count} தலைப்புகள்",
+      "literature": "தமிழ் இலக்கியம்",
+      "grammar": "தமிழ் இலக்கணம்",
+      "polity": "இந்திய அரசியல்",
+      "history": "வரலாறு & பண்பாடு",
+      "geography": "புவியியல்",
+      "maths": "கணிதம்",
+      "gk": "பொது அறிவு"
+    },
+    "mock_banner": {
+      "title": "அடுத்த மெகா மாதிரித் தேர்வு",
+      "timer_label": "கால அவகாசம்: {time}",
+      "register_btn": "பதிவு"
+    }
+  },
+  "quiz": {
+    "question_counter": "வினா {current} / {total}",
+    "time_remaining": "{time} மீதம்",
+    "time_up": "நேரம் முடிந்தது!",
+    "close_confirm_title": "தேர்விலிருந்து வெளியேற வேண்டுமா?",
+    "close_confirm_desc": "இப்போது வெளியேறினால் உங்கள் விடைகள் சேமிக்கப்படாது.",
+    "cancel": "ரத்து",
+    "exit": "வெளியேறு",
+    "audio_listen": "கேள்வியைக் கேட்கவும்",
+    "options": {
+      "A": "அ",
+      "B": "ஆ",
+      "C": "இ",
+      "D": "ஈ"
+    },
+    "explanation_title": "விளக்கம் (Explanation)",
+    "prev_btn": "முந்தைய",
+    "next_btn": "அடுத்து",
+    "submit_btn": "சமர்ப்பிக்கவும்",
+    "submitting": "சமர்ப்பிக்கப்படுகிறது...",
+    "results": {
+      "title": "தேர்வு முடிவுகள்",
+      "score_summary": "உங்கள் மதிப்பெண்: {score} / {total}",
+      "streak_msg": "உங்கள் தொடர்ச்சி {count} நாட்களாக உயர்ந்துள்ளது! 🔥",
+      "accuracy": "துல்லியம்: {accuracy}%",
+      "review_answers": "விடைகளை மதிப்பாய்வு செய்",
+      "home_btn": "முகப்புக்குச் செல்"
+    }
+  },
+  "practice": {
+    "header_badge": "TNPSC பயிற்சி தளம்",
+    "target_badge": "இலக்கு 2024",
+    "heading": "தொடர்ந்து பயிற்சி செய்யுங்கள்!",
+    "subheading": "உங்கள் தேர்வை வெற்றிகொள்ள தலைப்பு வாரியான வினாக்கள் மற்றும் முந்தைய ஆண்டு வினாத்தாள்கள்.",
+    "tabs": {
+      "topic": "தலைப்பு வாரியாக",
+      "pyq": "முந்தைய வினாக்கள்"
+    },
+    "search_placeholder": "வினாக்கள் அல்லது தலைப்புகளைத் தேடுக...",
+    "filters": {
+      "all": "அனைத்தும்",
+      "group4": "Group 4 (2023)",
+      "group2": "Group 2 (2022)",
+      "vao": "VAO (2021)",
+      "tamil": "General Tamil"
+    },
+    "card": {
+      "questions_count": "{count} கேள்விகள்",
+      "completed": "முடிந்தது",
+      "start_btn": "தொடங்கு",
+      "take_exam_btn": "தேர்வு எழுது",
+      "bookmarked": "புக்மார்க் சேமிக்கப்பட்டது!",
+      "unbookmarked": "புக்மார்க் நீக்கப்பட்டது",
+      "special_tag": "Group 4 சிறப்புப் பகுதி",
+      "unit8_tag": "VAO ஸ்பெஷல் (Unit 8)",
+      "maths_tag": "25 மதிப்பெண்கள்",
+      "solutions_tag": "முழுமையான தீர்வுடன்"
+    },
+    "quick_practice_title": "விரைவு பயிற்சி",
+    "toast": {
+      "starting": "தொடங்கப்படுகிறது: {title}",
+      "quick_start": "⚡ விரைவு மாதிரித் தேர்வு தொடங்குகிறது!"
+    }
+  },
+  "profile": {
+    "badge": "Group 4 VAO",
+    "aspirant_id": "பதிவு எண்: {id}",
+    "target_status": "இலக்கு: தமிழ்நாடு அரசு பணி தேர்வு 2024",
+    "edit_btn": "மாற்று",
+    "metrics": {
+      "streak_title": "நாட்கள்",
+      "streak_sub": "தொடர்ச்சி 🔥",
+      "accuracy_sub": "துல்லியம் 🎯",
+      "solved_sub": "வினாக்கள் 📚"
+    },
+    "heatmap": {
+      "title": "14-நாள் செயல்பாட்டு வரைபடம்",
+      "badge": "மிகச்சிறப்பு",
+      "desc": "கடந்த இரண்டு வாரங்களில் உங்கள் தினசரி பயிற்சி நிலை:",
+      "days": {
+        "monday": "திங்கள்",
+        "tuesday": "செவ்வாய்",
+        "wednesday": "புதன்",
+        "thursday": "வியாழன்",
+        "friday": "வெள்ளி",
+        "saturday": "சனி",
+        "sunday": "ஞாயிறு"
+      }
+    },
+    "settings": {
+      "title": "அமைப்புகள் & விருப்பங்கள்",
+      "bookmarks": {
+        "title": "குறிப்புகள் & சேமிப்பு",
+        "desc": "நீங்கள் சேமித்த வினாக்கள் மற்றும் குறிப்புகள்"
+      },
+      "weak_topics": {
+        "title": "பலவீனமான தலைப்புகள் பகுப்பாய்வு",
+        "desc": "அதிக கவனம் தேவைப்படும் பகுதிகள்"
+      },
+      "notifications": {
+        "title": "அறிவிப்புகள் & நினைவூட்டல்கள்",
+        "desc": "தினசரி தேர்வு எச்சரிக்கைகள்"
+      },
+      "appearance": {
+        "title": "மொழி & தோற்றம்",
+        "desc": "தமிழ் / Dark Mode இயக்கத்தில் உள்ளது"
+      },
+      "logout": {
+        "title": "வெளியேறு",
+        "desc": "கணக்கிலிருந்து வெளியேறுதல்",
+        "confirm": "நீங்கள் நிச்சயமாக வெளியேற விரும்புகிறீர்களா?"
+      }
+    }
+  },
+  "errors": {
+    "network_error": "இணைய இணைப்பு இல்லை. ஆஃப்லைன் முறையில் செயல்படுகிறது.",
+    "server_error": "சர்வர் பிழை. சிறிது நேரம் கழித்து மீண்டும் முயற்சிக்கவும்.",
+    "unauthorized": "உங்கள் அமர்வு முடிந்துவிட்டது. மீண்டும் உள்நுழையவும்.",
+    "validation_error": "தயவுசெய்து சரியான விவரங்களை உள்ளிடவும்.",
+    "not_found": "தேடப்பட்ட பக்கம் அல்லது வினா கிடைக்கவில்லை."
+  }
+}

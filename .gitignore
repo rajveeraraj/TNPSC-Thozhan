@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+*/node_modules/
+vendor/
+*/vendor/
+
+# Environment files
+.env
+.env.backup
+.env.production
+*.env.local
+
+# Build outputs & caches
+dist/
+*/dist/
+build/
+*/build/
+.phpunit.cache
+.phpunit.result.cache
+*.log
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Agent internal caches & teamwork artifacts
+.agents/
+
+# Laravel specific
+backend/storage/*.key
+backend/storage/framework/cache/data/*
+backend/storage/framework/sessions/*
+backend/storage/framework/views/*
+backend/storage/logs/*
+!backend/storage/framework/.gitignore
+!backend/storage/logs/.gitignore
