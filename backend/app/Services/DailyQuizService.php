@@ -66,9 +66,23 @@ class DailyQuizService
         $total = $questions->count();
         $details = [];
 
+        // Normalize answers input whether sent as array of objects [{question_id, selected_option}] or key-value map
+        $normalizedAnswers = [];
+        foreach ($answers as $key => $val) {
+            if (is_array($val)) {
+                $qId = $val['question_id'] ?? $key;
+                $opt = $val['selected_option'] ?? $val['answer'] ?? null;
+                if ($qId !== null && $opt !== null) {
+                    $normalizedAnswers[(int) $qId] = is_string($opt) ? trim($opt) : (string) $opt;
+                }
+            } elseif (is_string($val)) {
+                $normalizedAnswers[(int) $key] = trim($val);
+            }
+        }
+
         foreach ($questions as $question) {
-            $userAnswer = $answers[$question->id] ?? null;
-            $isCorrect = ($userAnswer !== null && strtoupper($userAnswer) === strtoupper($question->answer));
+            $userAnswer = $normalizedAnswers[$question->id] ?? null;
+            $isCorrect = ($userAnswer !== null && is_string($userAnswer) && strtoupper($userAnswer) === strtoupper($question->answer));
 
             if ($isCorrect) {
                 $score++;
@@ -99,16 +113,21 @@ class DailyQuizService
         // Update streak
         $streak = $streakService->recordDailyQuizCompletion($user, $today);
 
+        $accuracy = $total > 0 ? round(($score / $total) * 100) : 0;
+
         return [
             'score' => $score,
             'total' => $total,
-            'percentage' => $total > 0 ? round(($score / $total) * 100) : 0,
+            'percentage' => $accuracy,
+            'accuracy_percentage' => $accuracy,
             'streak' => [
                 'current' => $streak->current,
                 'best' => $streak->best,
                 'last_date' => $streak->last_date?->format('Y-m-d'),
+                'is_completed_today' => true,
             ],
             'details' => $details,
+            'results' => $details,
         ];
     }
 }

@@ -230,8 +230,25 @@ class DailyQuizService implements IDailyQuizService {
 
   public async submitQuiz(payload: QuizSubmissionPayload): Promise<QuizSubmissionResult> {
     if (!apiClient.getMockMode()) {
-      const response = await apiClient.post<QuizSubmissionResult>('/quiz/daily/submit', payload);
-      return response.data;
+      try {
+        const response = await apiClient.post<QuizSubmissionResult>('/quiz/daily/submit', payload);
+        if (response.data) {
+          const res = response.data;
+          // Sync streak locally as well
+          if (res.streak) {
+            saveStoredStreak({
+              current: res.streak.current,
+              best: res.streak.best,
+              last_date: res.streak.last_date || getTodayKolkataDate(),
+              is_completed_today: true,
+            });
+          }
+          markQuizCompletedOnDate(payload.date || getTodayKolkataDate());
+          return res;
+        }
+      } catch (err) {
+        console.warn('API quiz submission failed, calculating fallback results:', err);
+      }
     }
 
     const { date, answers } = payload;
