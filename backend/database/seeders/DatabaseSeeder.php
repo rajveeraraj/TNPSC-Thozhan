@@ -11,7 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Only seed authentic questions bank; ZERO sample users!
+        // Seed authentic questions bank and default users
         $this->call(QuestionSeeder::class);
+        $this->call(UserSeeder::class);
     }
 }
