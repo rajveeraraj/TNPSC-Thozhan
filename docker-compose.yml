@@ -1,0 +1,109 @@
+services:
+  # ===================================================
+  # 1. Frontend: React PWA (Nginx)
+  # ===================================================
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: tnpsc_frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "3000:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - tnpsc_network
+
+  # ===================================================
+  # 2. Backend: Laravel 12 REST API & Admin Portal
+  # ===================================================
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: tnpsc_backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      APP_NAME: "TNPSC தோழன்"
+      APP_ENV: "production"
+      APP_DEBUG: "false"
+      APP_URL: "http://localhost:8000"
+      APP_KEY: "base64:f5LQ3uICbEjk0GxogGbpjRTZFKztwtKPGPndXSoQXQA="
+      DB_CONNECTION: "mysql"
+      DB_HOST: "db"
+      DB_PORT: "3306"
+      DB_DATABASE: "tnpsc_thozhan"
+      DB_USERNAME: "tnpsc_user"
+      DB_PASSWORD: "secret_password_2026"
+      DB_SEED_ON_START: "true"
+      SESSION_DRIVER: "database"
+      QUEUE_CONNECTION: "database"
+      CACHE_STORE: "database"
+    volumes:
+      - storage_data:/var/www/html/storage
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - tnpsc_network
+
+  # ===================================================
+  # 3. Database: MySQL 8.0 (UTF-8 Tamil Support)
+  # ===================================================
+  db:
+    image: mysql:8.0
+    container_name: tnpsc_mysql
+    restart: unless-stopped
+    command: >
+      --default-authentication-plugin=mysql_native_password
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+      --innodb-buffer-pool-size=256M
+    environment:
+      MYSQL_ROOT_PASSWORD: "root_password_2026"
+      MYSQL_DATABASE: "tnpsc_thozhan"
+      MYSQL_USER: "tnpsc_user"
+      MYSQL_PASSWORD: "secret_password_2026"
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot_password_2026"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    networks:
+      - tnpsc_network
+
+  # ===================================================
+  # 4. In-Memory Cache & Queue (Redis)
+  # ===================================================
+  redis:
+    image: redis:alpine
+    container_name: tnpsc_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - tnpsc_network
+
+networks:
+  tnpsc_network:
+    driver: bridge
+
+volumes:
+  mysql_data:
+    driver: local
+  storage_data:
+    driver: local
+  redis_data:
+    driver: local

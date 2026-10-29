@@ -98,6 +98,26 @@ npm run dev
 ```
 - Open browser at: `http://localhost:3000`
 
+### Option C: Production Docker Deployment (Recommended for Production)
+
+#### 1. Multi-Container Orchestration (Frontend + Backend + MySQL + Redis)
+Run with Docker Compose:
+```bash
+docker compose up -d --build
+```
+Or double-click `docker-start.bat` on Windows.
+- **Frontend App**: `http://localhost:3000` (or `http://localhost:80`)
+- **Admin Dashboard**: `http://localhost:8000/admin`
+- **Backend API**: `http://localhost:8000/api/health`
+- **MySQL DB**: `localhost:3306` (`tnpsc_thozhan`)
+
+#### 2. Single-Container Cloud Deployment (Cloud Run / Render / Railway / Fly.io)
+Deploy the root `Dockerfile` which packages both the compiled React PWA and Laravel backend with Nginx & PHP-FPM:
+```bash
+docker build -t tnpsc-thozhan:latest .
+docker run -p 80:80 -e DB_CONNECTION=sqlite -e APP_KEY=base64:... tnpsc-thozhan:latest
+```
+
 ---
 
 ## 🧪 Verification & Test Results
